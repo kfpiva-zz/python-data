@@ -87,3 +87,22 @@ def hit(deck,hand):
 
     hand.add_card(deck.deal())
     hand.adjust_for_ace()
+
+def hit_or_stand(deck,hand,playing):
+
+    while True:
+        x = input('Hit or Stand - select H or S')
+        if x[0].lower() == 'h':
+            hit(deck,hand)
+
+        elif x[0].lower() == 's':
+            print("Player stands, dealer's turn")
+            playing = False
+
+        else:
+            print("Didn't understand, Please enter just h or s only")
+            continue
+
+        break
+
+    return playing
